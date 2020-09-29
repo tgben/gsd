@@ -48,10 +48,11 @@ function newtemp() {
     if [ -f "$PWD/$1" ]; then echo "$1 already exists."; return; fi
     
     newtemp=/Users/$USER/.gsd/templates/$1
+    # really should open with neovim, but I guess vim must do.
     if [[ "$1" == *".md" ]]; then
-        nvim "$newtemp"
+        vim "$newtemp"
     else
-        nvim "$newtemp.md"
+        vim "$newtemp.md"
     fi
 }
 
