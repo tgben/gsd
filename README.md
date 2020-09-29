@@ -25,10 +25,10 @@ listtem(late)s: lists all templates in template directory
 USAGE: listtemps 
 
 # Installation
-cd ~
-git clone https://github.com/ThomasGeorgeBenoit/gsd
-mkdir ~/gsd/templates/
-source ~/gsd/gsd.sh
+1. cd ~
+2. git clone https://github.com/ThomasGeorgeBenoit/gsd
+3. mkdir ~/gsd/templates/
+4. source ~/gsd/gsd.sh
 
 
 # Dependencies
