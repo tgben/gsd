@@ -21,7 +21,7 @@ newtemp(late): make and open new template under ~/gsd/templates/
 USAGE: newtemp(late) [desired template name]  
 
 ### listtemps
-listtem(late)s: lists all templates in template directory  
+listtemp(late)s: lists all templates in template directory  
 USAGE: listtemps 
 
 # Installation
@@ -32,4 +32,4 @@ USAGE: listtemps
 
 
 # Dependencies
-pandoc  
+pandoc (also dependent on LateX)
