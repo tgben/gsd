@@ -32,4 +32,4 @@ USAGE: listtemps
 
 
 # Dependencies
-pandoc (also dependent on LateX)
+pandoc (also dependent on LaTeX)
