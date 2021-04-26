@@ -1,8 +1,8 @@
 #! /bin/bash
 
-# m(a)keall: generate a pdf of any markdown files in workingdir 
-# USAGE: mkall
-function mkall(){
+# make: generate a pdf of all markdown files in working directory
+# USAGE: gsdmake
+function gsdmake(){
     printf "Compiling"
 	for name in $PWD/*.md; do
 		[ -f "$name" ] || break
@@ -13,9 +13,9 @@ function mkall(){
     printf "\n"
 }
 
-# m(a)keone: generate a pdf of one markdown file
-# USAGE: mkone [desired .md filename]
-function mkone(){
+# make one: generate a pdf of one markdown file
+# USAGE: gsdmakeone [desired .md filename]
+function gsdmakeone(){
     if [ $# -eq 0 ]; then echo "USAGE: mkone [filename]"; return; fi
     
     basename="${1%.*}"
@@ -23,10 +23,10 @@ function mkone(){
 	pandoc -V geometry:margin=1in -o $basename.pdf $name
 }
 
-# so(urce)new: generates new markdown file based on template format
-# USAGE: sonew [desired .md filename] [template file name]
+# new: generates new markdown file based on template format
+# USAGE: gsdnew [desired .md filename] [template file name]
 # templates contain a few lines of text. Located in ~/.gsd/templates/
-function sonew(){
+function gsdnew(){
     #argument and input checking
     if [ $# -eq 0 ]; then echo "USAGE: sonew [new name] [template]"; return; fi
     if [ -f "$PWD/$1" ]; then echo "$1 already exists."; return; fi
@@ -40,9 +40,9 @@ function sonew(){
     fi
 }
 
-# newtemp(late): make and open new template under ~/.gsd/templates/
-# USAGE: newtemp(late) [desired template name] 
-function newtemp() {
+# new template: make and open new template under ~/.gsd/templates/
+# USAGE: gsdnewtemplate(late) [desired template name] 
+function gsdnewtemplate() {
     #argument and input checking
     if [ $# -eq 0 ]; then echo "USAGE: newtemp [desired template name]"; return; fi
     if [ -f "$PWD/$1" ]; then echo "$1 already exists."; return; fi
@@ -56,9 +56,9 @@ function newtemp() {
     fi
 }
 
-# listtem(late)s: lists all templates in template directory
-# USAGE: listtemps
-function listtemps(){
+# list templates: lists all templates in template directory
+# USAGE: gsdlisttemplates
+function gsdlisttemplates(){
     printf "Available Templates:"
 	for name in "/Users/$USER/.gsd/templates"/*; do
         printf " "${name##*/}
